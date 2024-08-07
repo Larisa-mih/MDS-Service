@@ -1,0 +1,41 @@
+{% extends 'mds_service/home.html' %}
+{% load my_tags %}
+{% block content %}
+{% csrf_token %}
+<hr class="featurette-divider">
+<div class="container text-center col-12">
+    {% csrf_token %}
+    <div class="row text-center col-12">
+        {% for doctor in object_list %}
+        {% if doctor.first_name != None and doctor.last_name != None and doctor.photo %}
+        <div class="col-4">
+            <br>
+            <div class="container text-center">
+                <img width="300" height="300" src="{{ doctor.photo | media_filter }}">
+                <br>
+                <br>
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ doctor.first_name }} {{ doctor.last_name }}</h4>
+                </div>
+                <div class="card-header">
+                    <h5 class="my-0 font-weight-normal">{{ doctor.direction }}</h5>
+                </div>
+            </div>
+            <br>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <hr class="featurette-divider">
+        <div class="container col-6">
+            <div class="container text-center">
+                <div class="d-grid gap-5 col-6 mx-auto">
+                    <button class="btn btn-primary" type="button"><a class="btn btn btn-primary"
+                                                                     href="{% url 'mds_service:create_appointment' %}"
+                                                                     role="button"
+                                                                     type="submit">Записаться на приём</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

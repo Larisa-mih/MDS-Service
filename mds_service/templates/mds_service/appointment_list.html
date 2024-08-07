@@ -1,0 +1,47 @@
+{% extends 'mds_service/home.html' %}
+{% load static %}
+{% load my_tags %}
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="text-center">
+        <h1 class="fw-normal">ВСЕ ЗАПИСИ</h1>
+        <br>
+    </div>
+</div>
+
+<hr class="featurette-divider">
+<div class="container text-start col-12">
+    <div class="row text-start col-12">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Пользователь</th>
+                <th scope="col">Услуга</th>
+                <th scope="col">Врач</th>
+                <th scope="col">Желаемая дата</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for appointment in object_list %}
+            <tr>
+                <td>{{ appointment.user }}</td>
+                <td>{{ appointment.service}}</td>
+                <td>{{ appointment.doctor }}</td>
+                <td>{{ appointment.date }}</td>
+                <td scope="col"><a class="btn btn-lg btn-primary p-3 "
+                                   href="{% url 'mds_service:appointment_detail' appointment.pk %}"
+                                   role="button" type="submit">Подробнее</a>
+                <td>
+            </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</div>
+{% endblock %}

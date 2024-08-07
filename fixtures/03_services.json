@@ -1,0 +1,224 @@
+[
+{
+  "model": "mds_service.direction",
+  "pk": 1,
+  "fields": {
+    "name_direction": "МРТ диагностика.",
+    "description": "Магнитно-резонансная томография (МРТ) - томографический метод исследования внутренних органов и тканей с использованием эффекта резонансного поглощения атомами электромагнитных волн. С помощью МР-диагностики можно успешно выявить большое количество заболеваний."
+  }
+},
+{
+  "model": "mds_service.direction",
+  "pk": 2,
+  "fields": {
+    "name_direction": "УЗИ.",
+    "description": "Ультразвуковое исследование – это метод диагностики, который используют для оценки практически всех систем и органов человека. Это самый популярный, простой и информативный метод исследования и постановки диагнозов , а так же оценки динамики лечения.\r\n\r\nМы применяем цифровой аппарат высочайшего класса известной во всем мире марки АЛОКА (Япония) с цифровой технологией формирования ультразвуковых лучей и изображений, цифровой технологией обработки доплеровского сигнала; оснащенный цветным энергетическим Доплером, полным набором электронных мультичастотных датчиков, двойным динамическим дисплеем и технологией интеллектуального управления."
+  }
+},
+{
+  "model": "mds_service.direction",
+  "pk": 3,
+  "fields": {
+    "name_direction": "Анализы.",
+    "description": "Все исследования, необходимые для диагностики, проводятся за кратчайшее время и полностью на территории клиники  «MDS- Service».\r\n\r\nТактика исследования имеет ступенчатость, т.е. только после осмотра врача пациент направляется на исследование гормонов или биохимического исследования крови, ультразвуковой диагностики,  мульти-слайдной компьютерной томографии или магнитно-резонансной томографии. Это зависит от предварительного диагноза специалиста."
+  }
+},
+{
+  "model": "mds_service.direction",
+  "pk": 4,
+  "fields": {
+    "name_direction": "Анализы.",
+    "description": "Наличие современной лаборатории, высокотехнологического оборудования и совместная слаженная работа врачей  в «MDS-Service» даёт возможность диагностики большинства эндокринных заболеваний.\r\n\r\nНеобходимо отметить, что все исследования, необходимые для диагностики, проводятся за кратчайшее время и полностью на территории клиники  «MDS- Service»."
+  }
+},
+{
+  "model": "mds_service.doctor",
+  "pk": 1,
+  "fields": {
+    "first_name": "Иван",
+    "last_name": "Сергеевич",
+    "photo": "person/Иван_Сергеевич.png",
+    "direction": 1
+  }
+},
+{
+  "model": "mds_service.doctor",
+  "pk": 2,
+  "fields": {
+    "first_name": "Мария",
+    "last_name": "Петрова",
+    "photo": "person/Мария_Петрова.png",
+    "direction": 2
+  }
+},
+{
+  "model": "mds_service.doctor",
+  "pk": 3,
+  "fields": {
+    "first_name": "Самуэль",
+    "last_name": "Вейсман",
+    "photo": "person/Самуэль_Вейсман.png",
+    "direction": 3
+  }
+},
+{
+  "model": "mds_service.doctor",
+  "pk": 4,
+  "fields": {
+    "first_name": "Юлия",
+    "last_name": "Михайлова",
+    "photo": "person/Юлия_Михайлова.png",
+    "direction": 4
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 1,
+  "fields": {
+    "name_service": "Исследования гормонов в крови: Т3общ, Т3 своб., Т4 общ., Т4 своб., ТТГ, АТ –ТГ",
+    "description": "001",
+    "direction": 3,
+    "price": 10000
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 2,
+  "fields": {
+    "name_service": "паратгормон",
+    "description": "002",
+    "direction": 3,
+    "price": 500
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 3,
+  "fields": {
+    "name_service": "биохимические исследования",
+    "description": "003",
+    "direction": 3,
+    "price": 600
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 5,
+  "fields": {
+    "name_service": "инсулин",
+    "description": "005",
+    "direction": 3,
+    "price": 200
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 7,
+  "fields": {
+    "name_service": "Тест на ПЦР (Covid-19) и на Антитела IgM;IgG круглосуточно в MDS-Service.",
+    "description": "006",
+    "direction": 4,
+    "price": 500
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 8,
+  "fields": {
+    "name_service": "УЗИ щитовидной железы",
+    "description": "0101",
+    "direction": 2,
+    "price": 1000
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 9,
+  "fields": {
+    "name_service": "УЗИ брюшной полости",
+    "description": "0102",
+    "direction": 2,
+    "price": 1000
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 10,
+  "fields": {
+    "name_service": "УЗИ печени",
+    "description": "0103",
+    "direction": 2,
+    "price": 1000
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 11,
+  "fields": {
+    "name_service": "УЗИ вен и сосудов",
+    "description": "0104",
+    "direction": 2,
+    "price": 1500
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 13,
+  "fields": {
+    "name_service": "УЗИ сосудов шеи и головы",
+    "description": "0106",
+    "direction": 2,
+    "price": 1500
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 14,
+  "fields": {
+    "name_service": "Биопсия под контролем УЗИ",
+    "description": "0106",
+    "direction": 2,
+    "price": 500
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 15,
+  "fields": {
+    "name_service": "УЗИ почек и надпочечников",
+    "description": "0107",
+    "direction": 2,
+    "price": 1000
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 16,
+  "fields": {
+    "name_service": "МРТ головы",
+    "description": "0201",
+    "direction": 1,
+    "price": 5000
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 17,
+  "fields": {
+    "name_service": "МРТ позвоночника",
+    "description": "0202",
+    "direction": 1,
+    "price": 7000
+  }
+},
+{
+  "model": "mds_service.service",
+  "pk": 18,
+  "fields": {
+    "name_service": "МРТ суставов",
+    "description": "0203",
+    "direction": 1,
+    "price": 4000
+  }
+}
+]

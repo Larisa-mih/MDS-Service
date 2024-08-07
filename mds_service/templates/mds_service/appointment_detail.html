@@ -1,0 +1,23 @@
+{% extends 'mds_service/home.html' %}
+{% block content %}
+<hr class="featurette-divider">
+<div style="text-align:center">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <div class="card mx-auto" style="width: 18rem;">
+                <div class="card-body mx-50 text-start">
+                    <form method="post" enctype="multipart/form-data"></form>
+                    <p class="card-text">Пользователь: {{object.user}}</p>
+                    <p class="card-text">Услуга: {{object.service}}</p>
+                    <p class="card-text">Врач-специалист: {{object.doctor}}</p>
+                    <p class="card-text">Желаемая дата: {{object.date}}</p>
+                </div>
+                <a href="{% url 'mds_service:update_appointment' object.pk %}"
+                   class="btn btn-block btn-outline-warning">Редактировать запись</a>
+                <a href="{% url 'mds_service:delete_appointment' object.pk %}"
+                   class="btn btn-block btn-outline-danger">Удалить запись</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
