@@ -3,7 +3,7 @@ services:
     image: postgres:latest
     restart: on-failure
     env_file:
-      - .env
+      - .env.docker
     environment:
       - ENVIRONMENT=docker
     expose:
@@ -21,7 +21,7 @@ services:
     tty: true
     restart: on-failure
     env_file:
-      - .env
+      - .env.docker
     environment:
       - ENVIRONMENT=docker
     ports:
