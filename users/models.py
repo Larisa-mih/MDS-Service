@@ -9,6 +9,8 @@ class User(AbstractUser):
 
     username = None
     email = models.EmailField(unique=True, verbose_name="почта")
+    first_name = models.CharField(max_length=50, verbose_name="имя")
+    last_name = models.CharField(max_length=50, verbose_name="фамилия")
     phone = models.CharField(max_length=35, verbose_name="телефон", **NULLABLE)
     city = models.CharField(max_length=100, verbose_name="город", **NULLABLE)
     is_verified = models.BooleanField(default=False, verbose_name="подтверждён")

@@ -1,8 +1,8 @@
+from datetime import datetime
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-
-from users.models import User
+from config import settings
 
 NULLABLE = {"blank": True, "null": True}
 
@@ -28,8 +28,7 @@ class Doctor(models.Model):
     last_name = models.CharField(max_length=30, verbose_name="Фамилия")
     photo = models.ImageField(upload_to="person/", verbose_name="фото", **NULLABLE)
     direction = models.ForeignKey(
-        Direction, on_delete=models.CASCADE, verbose_name="направление", **NULLABLE
-    )
+        Direction, on_delete=models.CASCADE, verbose_name="направление")
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -43,7 +42,7 @@ class Service(models.Model):
     """Модель услуги"""
 
     name_service = models.CharField(max_length=250, verbose_name="наименование")
-    description = models.CharField(verbose_name="артикул", **NULLABLE)
+    description = models.CharField(verbose_name="артикул")
     direction = models.ForeignKey(
         Direction, on_delete=models.CASCADE, verbose_name="направление"
     )
@@ -61,19 +60,17 @@ class Appointment(models.Model):
     """Модель записи на диагностику"""
 
     user = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="записи",
-        verbose_name="пациент",
-        **NULLABLE,
-    )
+        verbose_name="пациент")
     service = models.ForeignKey(
         Service, on_delete=models.CASCADE, related_name="записи", verbose_name="услуга"
     )
     doctor = models.ForeignKey(
         Doctor, on_delete=models.CASCADE, related_name="записи", verbose_name="врач"
     )
-    date = models.DateTimeField(verbose_name="дата и время приема")
+    date = models.DateTimeField(default=datetime.now(), verbose_name="дата и время приема")
 
     def __str__(self):
         return f"{self.user}: {self.date} {self.service}, {self.doctor}"

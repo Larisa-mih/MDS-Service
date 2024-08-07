@@ -1,7 +1,6 @@
 from django.urls import path
 from mds_service.apps import MdsServiceConfig
 from mds_service.views import (
-    BaseTemplateView,
     HomeTemplateView,
     AboutTheClinicTemplateView,
     ContactsTemplateView,
@@ -17,8 +16,7 @@ from mds_service.views import (
 app_name = MdsServiceConfig.name
 
 urlpatterns = [
-    path("", BaseTemplateView.as_view(), name="base"),
-    path("home/", HomeTemplateView.as_view(), name="home"),
+    path("", HomeTemplateView.as_view(), name="home"),
     path(
         "about_the_clinic/",
         AboutTheClinicTemplateView.as_view(),

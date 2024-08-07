@@ -25,4 +25,4 @@ class ServiceAdmin(admin.ModelAdmin):
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "service", "doctor", "date")
-    list_editable = ("user", "service", "doctor", "date")
+    list_editable = ("user", "service", "doctor")

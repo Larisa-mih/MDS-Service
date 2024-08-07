@@ -13,12 +13,6 @@ from mds_service.models import Doctor, Appointment, Service
 from users.models import User
 
 
-class BaseTemplateView(TemplateView):
-    """Контроллер отображения базовой страницы"""
-
-    template_name = "mds_service/base.html"
-
-
 class HomeTemplateView(TemplateView):
     """Контроллер отображения главной страницы"""
 
