@@ -27,6 +27,27 @@ body {
   height: 32rem;
 }
 
+.carousel-inner .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Чтобы изображения полностью заполняли контейнер */
+}
+
+.custom-size {
+  width: 400px;  /* Задаем ширину блока */
+  height: 400px; /* Задаем высоту блока */
+}
+.custom-size img {
+  width: 100%; /* Изображение занимает всю ширину блока */
+  height: 100%; /* Изображение занимает всю высоту блока */
+  object-fit: cover; /* Масштабируем изображение, сохраняя его пропорции */
+}
+
+.container.marketing .row.marketing {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */

@@ -52,86 +52,90 @@
 </div>
 
 <hr class="featurette-divider">
-<div class="container text-start col-12">
-    <div class="row text-start col-12">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">Анализы</th>
-                <th scope="col">Артикул</th>
-                <th scope="col">Цена</th>
-            </tr>
-            </thead>
+<div class="container mt-3">
+    <table class="table table-bordered">
+        <colgroup>
+            <col style="width: 70%;">
+            <col style="width: 15%;">
+            <col style="width: 15%;">
+        </colgroup>
+        <thead>
+        <tr>
+            <th scope="col">Анализы</th>
+            <th scope="col">Артикул</th>
+            <th scope="col">Цена</th>
+        </tr>
+        </thead>
 
-            <tbody>
-            {% for service in object_list %}
-            {% if service.direction_id == 3 %}
-            <tr>
-                <td>{{ service.name_service }}</td>
-                <td>{{ service.description}}</td>
-                <td>{{ service.price }} руб.</td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-            </tbody>
-
-        </table>
-    </div>
+        <tbody>
+        {% for service in object_list %}
+        {% if service.direction_id == 3 %}
+        <tr>
+            <td>{{ service.name_service }}</td>
+            <td>{{ service.description}}</td>
+            <td>{{ service.price }} руб.</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 <br>
-<br>
-<div class="container text-start col-12">
-    <div class="row text-start col-12">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">МРТ</th>
-                <th scope="col">Артикул</th>
-                <th scope="col">Цена</th>
-            </tr>
-            </thead>
+<div class="container mt-3">
+    <table class="table table-bordered">
+        <colgroup>
+            <col style="width: 70%;">
+            <col style="width: 15%;">
+            <col style="width: 15%;">
+        </colgroup>
+        <thead>
+        <tr>
+            <th scope="col">МРТ</th>
+            <th scope="col">Артикул</th>
+            <th scope="col">Цена</th>
+        </tr>
+        </thead>
 
-            <tbody>
-            {% for service in object_list %}
-            {% if service.direction_id == 1 %}
-            <tr>
-                <td>{{ service.name_service }}</td>
-                <td>{{ service.description}}</td>
-                <td>{{ service.price }} руб.</td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-            </tbody>
+        <tbody>
+        {% for service in object_list %}
+        {% if service.direction_id == 1 %}
+        <tr>
+            <td>{{ service.name_service }}</td>
+            <td>{{ service.description}}</td>
+            <td>{{ service.price }} руб.</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
 
-        </table>
-    </div>
+    </table>
 </div>
 <br>
-<br>
-<div class="container text-start col-12">
-    <div class="row text-start col-12">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">УЗИ</th>
-                <th scope="col">Артикул</th>
-                <th scope="col">Цена</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            {% for service in object_list %}
-            {% if service.direction_id == 2 %}
-            <tr>
-                <td>{{ service.name_service }}</td>
-                <td>{{ service.description }}</td>
-                <td>{{ service.price }} руб.</td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-            </tbody>
-
-        </table>
-    </div>
+<div class="container mt-3">
+    <table class="table table-bordered">
+        <colgroup>
+            <col style="width: 70%;">
+            <col style="width: 15%;">
+            <col style="width: 15%;">
+        </colgroup>
+        <thead>
+        <tr>
+            <th>УЗИ</th>
+            <th>Артикул</th>
+            <th>Цена</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for service in object_list %}
+        {% if service.direction_id == 2 %}
+        <tr>
+            <td>{{ service.name_service }}</td>
+            <td>{{ service.description }}</td>
+            <td>{{ service.price }} руб.</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}
