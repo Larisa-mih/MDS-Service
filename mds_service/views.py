@@ -112,4 +112,4 @@ class AppointmentDeleteView(DeleteView):
 
     model = Appointment
     template_name = "mds_service/appointment_confirm_delete.html"
-    success_url = reverse_lazy("diagnostic_center:home")
+    success_url = reverse_lazy("mds_service:home")
